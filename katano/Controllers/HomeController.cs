@@ -1,8 +1,9 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using cloudten.Models;
+using katano.Models;
 
-namespace cloudten.Controllers;
+
+namespace katano.Controllers;
 
 public class HomeController : Controller
 {

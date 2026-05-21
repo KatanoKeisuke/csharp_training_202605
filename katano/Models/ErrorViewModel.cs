@@ -1,4 +1,4 @@
-namespace cloudten.Models;
+namespace katano.Models;
 
 public class ErrorViewModel
 {
