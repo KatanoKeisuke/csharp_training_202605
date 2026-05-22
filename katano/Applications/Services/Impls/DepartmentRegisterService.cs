@@ -4,7 +4,7 @@ using katano.Exceptions;
 using katano.Infrastructures.Context;
 namespace katano.Applications.Services.Impls;
 /// <summary>
-/// 従業員登録サービスインターフェイスの実装
+/// 部署登録サービスインターフェイスの実装
 /// </summary>
 public class DepartmentRegisterService : IDepartmentRegisterService
 {
@@ -14,7 +14,7 @@ public class DepartmentRegisterService : IDepartmentRegisterService
     /// </summary>
     private readonly AppDbContext _context;
     /// <summary>
-    /// ドメインオブジェクト:従業員のCRUD操作インターフェイス
+    /// ドメインオブジェクト:部署のCRUD操作インターフェイス
     /// </summary>
     private readonly IDepartmentRepository _departmentRepository;
 
@@ -22,9 +22,8 @@ public class DepartmentRegisterService : IDepartmentRegisterService
     /// コンストラクタ
     /// </summary>
     /// <param name="context">アプリケーション用DbContext</param>
-    /// <param name="employeeRepository">従業員のCRUD操作インターフェイス</param>
     /// <param name="departmentRepository">部署のCRUD操作インターフェイス</param>
-    public EmployeeRegisterService(
+    public DepartmentRegisterService(
         AppDbContext context,
         IDepartmentRepository departmentRepository)
     {
@@ -32,6 +31,7 @@ public class DepartmentRegisterService : IDepartmentRegisterService
         _departmentRepository = departmentRepository;
     }
 
+ 
     /// <summary>
     /// 新しい部署を登録する
     /// </summary>
@@ -43,7 +43,7 @@ public class DepartmentRegisterService : IDepartmentRegisterService
             // トランザクションの開始
             _context.Database.BeginTransaction();
             // 従業員の登録
-            _employeeRepository.Create(employee);
+            _departmentRepository.Create(department);
             // トランザクションのコミット
             _context.Database.CommitTransaction();   
         }

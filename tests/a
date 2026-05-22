@@ -1,1 +1,8 @@
 あめがやみました
++ボタン押すステージング
+git add .
+コミットする
+git commit -m "メッセージ"
+プッシュする
+git push -u origin main
+s
