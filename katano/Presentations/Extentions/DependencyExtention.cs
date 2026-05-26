@@ -83,6 +83,13 @@ public static class DependencyExtension
         services.AddScoped<EmployeeRegisterViewModelAdapter>();
          // 部署登録ViewModelをドメインオブジェクト:部署に変換するアダプターインターフェイスの実装
         services.AddScoped<DepartmentRegisterViewModelAdapter>();
+<<<<<<< HEAD
+=======
+           // 部署表示ViewModelをドメインオブジェクト:部署に変換するアダプターインターフェイスの実装
+        services.AddScoped<DepartmentSearchViewModelAdapter>();
+         // 部署表示ViewModelをドメインオブジェクト:部署に変換するアダプターインターフェイスの実装
+        services.AddScoped<EmployeeSearchViewModelAdapter>();
+>>>>>>> 85ca7ab (代々優勝)
         // TempDataへのEmployeeRegisterViewの保存・復元するためのクラス
         // コンストラクタを利用して明示的にDIコンテナにインスタンスを登録する
         services.AddScoped(

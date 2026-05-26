@@ -1,6 +1,13 @@
 using katano.Presentations.Extensions;
+<<<<<<< HEAD
 
 var builder = WebApplication.CreateBuilder(args);
+=======
+using katano.Presentations.Middlewares;
+
+var builder = WebApplication.CreateBuilder(args);
+
+>>>>>>> 85ca7ab (代々優勝)
 // ControllerやViewの依存関係を構築する
 builder.Services.AddControllersWithViews();
 
@@ -9,6 +16,14 @@ builder.Services.SettingDependencyInjection(builder.Configuration);
 
 var app = builder.Build();
 
+<<<<<<< HEAD
+=======
+// IngternalExceptionをハンドリングするミドルウェアを有効にする
+app.UseMiddleware<InternalExceptionLoggingMiddleware>();
+
+
+
+>>>>>>> 85ca7ab (代々優勝)
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

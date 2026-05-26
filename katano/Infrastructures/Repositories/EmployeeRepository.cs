@@ -30,6 +30,57 @@ public class EmployeeRepository : IEmployeeRepository
     }
 
     /// <summary>
+<<<<<<< HEAD
+=======
+    /// すべての部署を取得する
+    /// </summary>
+    /// <returns>部署のリスト</returns>
+    public List<Employee> FindAll()
+    {
+        try
+        {
+            var entities = _context.Employees.ToList();
+            var results = new List<Employee>();
+            foreach (var entity in entities)
+            {
+                results.Add(_adapter.Restore(entity));
+            }   
+            return results;
+        }
+        catch (Exception e)
+        {
+            throw new InternalException(
+                "すべての部署を取得できませんでした。", e);
+        }
+    }
+
+    /// <summary>
+    /// 指定された部署Idの部署を取得する
+    /// </summary>
+    /// <param name="id">部署Id</param>
+    /// <returns>取得して部署</returns>
+    public Employee? FindById(int id)
+    {
+        try
+        {
+            var result = _context.Employees.FirstOrDefault(e => e.EmpId == id);
+            if (result == null)
+            {
+                return null;
+            }
+            return _adapter.Restore(result);
+        }
+        catch (Exception e)
+        {
+            throw new InternalException(
+                "指定された部署Idの部署を取得できませんでした。", e);
+        }
+    }
+
+    
+
+    /// <summary>
+>>>>>>> 85ca7ab (代々優勝)
     /// 従業員を永続化する
     /// </summary>
     /// <param name="employee">永続化対象の従業員</param>
