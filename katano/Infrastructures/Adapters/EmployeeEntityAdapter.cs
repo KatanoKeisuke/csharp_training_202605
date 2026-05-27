@@ -20,8 +20,8 @@ IConverter<Employee, EmployeeEntity>, IRestorer<Employee, EmployeeEntity>
         var entity = new EmployeeEntity{
             EmpName = domain.Name
         };
-        if (domain.Id != null){
-            entity.EmpId = domain.Id.Value;
+        if (domain.EmpId != null){
+            entity.EmpId = domain.EmpId.Value;
         }
         if (domain.Department != null)
         {

@@ -5,7 +5,7 @@ namespace katano.Applications.Domains;
 /// </summary>
 public class Employee
 {
-    public int? Id { get; private set; } // 社員Id
+    public int? EmpId { get; private set; } // 社員Id
     public string Name { get; private set; } = string.Empty; // 氏名
     public Department? Department { get; private set; } // 所属部署（null可）
 
@@ -20,7 +20,7 @@ public class Employee
     public Employee(int? id, string name, Department? department)
     {
         ValidateName(name);
-        Id = id;
+        EmpId = id;
         Name = name;
         Department = department;
     }
@@ -68,11 +68,11 @@ public class Employee
     {
         if (ReferenceEquals(this, obj)) return true;
         if (obj is not Employee other) return false;
-        return Id == other.Id;
+        return EmpId == other.EmpId;
     }
 
-    public override int GetHashCode() => Id?.GetHashCode() ?? 0;
+    public override int GetHashCode() => EmpId?.GetHashCode() ?? 0;
 
     public override string ToString()
-        => $"{Id?.ToString() ?? "未登録"}: {Name} / {Department?.Name ?? "未配属"}";
+        => $"{EmpId?.ToString() ?? "未登録"}: {Name} : {Department?.Name ?? "未配属"}";
 }

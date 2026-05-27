@@ -7,6 +7,9 @@ namespace katano.Presentations.ViewModels;
 /// </summary>
 public class EmployeeSearchViewModel
 {
+    [Display(Name = "社員番号")]
+    [Required(ErrorMessage = "{0}は入力必須です。")]
+    public int? EmpId { get; set; } = 0;
     /// <summary>
     /// 氏名
     /// </summary>

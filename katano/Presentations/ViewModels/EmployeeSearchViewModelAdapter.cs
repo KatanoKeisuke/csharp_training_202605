@@ -29,8 +29,9 @@ public class EmployeeSearchViewModelAdapter : IRestorer<Employee, EmployeeSearch
         // Employeeを作成する
               // Department(部署)を作成する
         var employee = new EmployeeSearchViewModel();
-        employee.Name = target.Name;
-        employee.DeptId = target.Id;
+        employee.EmpId = target?.EmpId;
+        employee.Name = target?.Name;
+        employee.DeptId = target?.Department?.Id;
         employee.DeptName = target?.Department?.Name;
         return employee;
       

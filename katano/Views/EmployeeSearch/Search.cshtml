@@ -14,6 +14,7 @@
 <table class="table table-bordered"> <!-- Bootstrapのスタイルを適用した表 -->
     <thead> <!-- 表のヘッダー -->
         <tr> <!-- ヘッダー行 -->
+            <th>社員番号</th>
             <th>氏名</th> <!-- 氏名列のヘッダー -->
             <th>部署名</th> <!-- 年齢列のヘッダー -->
         </tr>
@@ -22,6 +23,7 @@
         @foreach (EmployeeSearchViewModel employee in Model) // 受け取ったリストを1件ずつ処理
         {
             <tr> <!-- データ行 -->
+                <td>@employee.EmpId</td>
                 <td>@employee.Name</td> <!-- 氏名を表示 -->
                 <td>@employee.DeptName</td>  <!-- 年齢を表示 -->
             </tr>

@@ -29,6 +29,6 @@ public class EmployeeEntity
 
     public override string? ToString()
     {
-        return $"社員Id:{EmpId},氏名:{EmpName},";
+        return $"社員Id:{EmpId},氏名:{EmpName},部署Id{DeptId}";
     }
 }
