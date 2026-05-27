@@ -1,6 +1,7 @@
 using katano.Applications.Adapters;
 using katano.Applications.Domains;
 using katano.Infrastructures.Entities;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Query.ExpressionTranslators.Internal;
 namespace katano.Infrastructures.Adapters;
 /// <summary>
 /// ドメインオブジェクト:EmployeeとEmployeeEntityの相互変換インターフェイスの実装
@@ -17,10 +18,12 @@ IConverter<Employee, EmployeeEntity>, IRestorer<Employee, EmployeeEntity>
     /// <returns>EmployeeEntity</returns>
     public EmployeeEntity Convert(Employee domain)
     {
-        var entity = new EmployeeEntity{
+        var entity = new EmployeeEntity
+        {
             EmpName = domain.Name
         };
-        if (domain.EmpId != null){
+        if (domain.EmpId != null)
+        {
             entity.EmpId = domain.EmpId.Value;
         }
         if (domain.Department != null)
@@ -37,11 +40,20 @@ IConverter<Employee, EmployeeEntity>, IRestorer<Employee, EmployeeEntity>
     /// <returns>ドメインオブジェクト:Employee</returns>
     public Employee Restore(EmployeeEntity target)
     {
+
         var employee = new Employee(
             target.EmpId,
             target.EmpName,
             null
+//            new Department(target.Department.DeptId,target.Department.DeptName)
         );
+        //DepartmentEntityからDepartmentに変換
+        DepartmentEntity deptEntity = target.Department;
+        int deptId = deptEntity.DeptId;
+        string deptName = deptEntity.DeptName;
+        Department department = new Department(deptId,deptName);
+        employee.ChangeDepartment(department) ;
+       
         return employee;
     }
 }

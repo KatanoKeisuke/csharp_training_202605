@@ -73,6 +73,10 @@ public class DepartmentRegisterController : Controller
     [HttpPost("Confirm")]
     public IActionResult Confirm(DepartmentRegisterViewModel viewModel)
     {
+               if (!ModelState.IsValid) // バリデーションエラーあり
+        {
+            return View("Enter", viewModel);
+        }
         // 確認画面を表示する
         return View(viewModel);
     }
@@ -82,7 +86,7 @@ public class DepartmentRegisterController : Controller
     /// </summary>
     /// <param name="form"></param>
     /// <returns></returns>
-    [HttpPost("Regiter")]
+    [HttpPost("Register")]
     public IActionResult Register(DepartmentRegisterViewModel viewModel)
     {
         // DepartmentRegisterViewModelをシリアライズして、TempDataに保存する

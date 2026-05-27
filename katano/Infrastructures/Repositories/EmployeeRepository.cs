@@ -3,6 +3,7 @@ using katano.Applications.Domains;
 using katano.Applications.Repositories;
 using katano.Infrastructures.Adapters;
 using katano.Exceptions;
+using Microsoft.EntityFrameworkCore;
 namespace katano.Infrastructures.Repositories;
 /// <summary>
 /// ドメインオブジェクト:従業員のCRUD操作インターフェイスの実装
@@ -37,7 +38,7 @@ public class EmployeeRepository : IEmployeeRepository
     {
         try
         {
-            var entities = _context.Employees.ToList();
+            var entities = _context.Employees.Include(e => e.Department).ToList();
             var results = new List<Employee>();
             foreach (var entity in entities)
             {

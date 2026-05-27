@@ -31,8 +31,8 @@ public class EmployeeSearchViewModelAdapter : IRestorer<Employee, EmployeeSearch
         var employee = new EmployeeSearchViewModel();
         employee.EmpId = target?.EmpId;
         employee.Name = target?.Name;
-        employee.DeptId = target?.Department?.Id;
-        employee.DeptName = target?.Department?.Name;
+        employee.DeptId = target.Department?.Id;
+        employee.DeptName = target.Department?.Name;
         return employee;
       
     }
