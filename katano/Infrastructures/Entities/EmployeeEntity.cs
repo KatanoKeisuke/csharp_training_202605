@@ -23,8 +23,6 @@ public class EmployeeEntity
     /// </summary>
     [Column("dept_id")]
     public int? DeptId { get; set; }
-<<<<<<< HEAD
-=======
 
      [ForeignKey("DeptId")]
     public DepartmentEntity? Department { get; set; }
@@ -33,5 +31,4 @@ public class EmployeeEntity
     {
         return $"社員Id:{EmpId},氏名:{EmpName},";
     }
->>>>>>> 85ca7ab (代々優勝)
 }

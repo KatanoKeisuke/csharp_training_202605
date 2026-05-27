@@ -30,8 +30,6 @@ public class EmployeeRepository : IEmployeeRepository
     }
 
     /// <summary>
-<<<<<<< HEAD
-=======
     /// すべての部署を取得する
     /// </summary>
     /// <returns>部署のリスト</returns>
@@ -80,7 +78,6 @@ public class EmployeeRepository : IEmployeeRepository
     
 
     /// <summary>
->>>>>>> 85ca7ab (代々優勝)
     /// 従業員を永続化する
     /// </summary>
     /// <param name="employee">永続化対象の従業員</param>

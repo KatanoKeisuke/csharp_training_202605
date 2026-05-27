@@ -38,6 +38,7 @@ public class DepartmentRegisterController : Controller
         DepartmentRegisterViewModelAdapter departmentRegisterViewModelAdapter,
         TempDataStore<DepartmentRegisterViewModel> deptDataStore)
     {
+            
         _logger = logger;
         _departmentRegisterService = departmentRegisterService;
         _adapter = departmentRegisterViewModelAdapter;

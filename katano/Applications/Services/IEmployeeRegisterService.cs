@@ -19,8 +19,6 @@ public interface IEmployeeRegisterService
     Department GetById(int id);
 
     /// <summary>
-<<<<<<< HEAD
-=======
     /// すべての部署を取得する
     /// </summary>
     /// <returns></returns>
@@ -34,7 +32,6 @@ public interface IEmployeeRegisterService
     Employee GetByEmpId(int empid);
 
     /// <summary>
->>>>>>> 85ca7ab (代々優勝)
     /// 新しい従業員を登録する
     /// </summary>
     /// <param name="employee"></param>
