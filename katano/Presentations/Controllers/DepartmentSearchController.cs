@@ -19,7 +19,7 @@ public class DepartmentSearchController : Controller
     /// </summary>
     private readonly IEmployeeRegisterService _employeeRegisterService;
     /// <summary>
-    /// 従業員登録ViewModelをDepartmentに変換するアダプター
+    /// 社員登録ViewModelをDepartmentに変換するアダプター
     /// </summary>
     private readonly DepartmentSearchViewModelAdapter _adapter;
 

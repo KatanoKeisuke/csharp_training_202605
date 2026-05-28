@@ -10,7 +10,6 @@ public class DepartmentSearchViewModel
  
         // SelectListItemのリストを作成
         [Display(Name = "所属部署")]
-    [Required(ErrorMessage = "{0}は選択必須です。")]
     public int? DeptId { get; set; } = 0;
 
     /// <summary>

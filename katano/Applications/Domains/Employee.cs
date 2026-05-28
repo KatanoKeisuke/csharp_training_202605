@@ -1,7 +1,7 @@
 using katano.Exceptions;
 namespace katano.Applications.Domains;
 /// <summary>
-/// 従業員を表すドメインオブジェクト
+/// 社員を表すドメインオブジェクト
 /// </summary>
 public class Employee
 {

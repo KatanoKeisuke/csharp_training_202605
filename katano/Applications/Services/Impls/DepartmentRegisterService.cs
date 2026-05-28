@@ -42,7 +42,7 @@ public class DepartmentRegisterService : IDepartmentRegisterService
         {
             // トランザクションの開始
             _context.Database.BeginTransaction();
-            // 従業員の登録
+            // 社員の登録
             _departmentRepository.Create(department);
             // トランザクションのコミット
             _context.Database.CommitTransaction();   

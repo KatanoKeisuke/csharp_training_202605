@@ -17,7 +17,7 @@ public class DepartmentRegisterController : Controller
     /// </summary>
     private readonly IDepartmentRegisterService _departmentRegisterService;
     /// <summary>
-    /// 従業員登録ViewModelをDepartmentに変換するアダプター
+    /// 社員登録ViewModelをDepartmentに変換するアダプター
     /// </summary>
     private readonly DepartmentRegisterViewModelAdapter _adapter;
     /// <summary>
@@ -113,7 +113,7 @@ public class DepartmentRegisterController : Controller
         }
         // DepartmentRegisterFormをドメインモデル:Departmentに変換する
         var department = _adapter.Restore(viewModel!);
-        // 新しい従業員を登録する
+        // 新しい社員を登録する
         _departmentRegisterService.Register(department);
         return View(viewModel);
     }

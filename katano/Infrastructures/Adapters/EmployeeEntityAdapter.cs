@@ -14,7 +14,7 @@ IConverter<Employee, EmployeeEntity>, IRestorer<Employee, EmployeeEntity>
     /// <summary>
     /// ドメインオブジェクト:EmployeeをEmployeeEntityに変換する
     /// </summary>
-    /// <param name="domain">ドメインモデル:従業員</param>
+    /// <param name="domain">ドメインモデル:社員</param>
     /// <returns>EmployeeEntity</returns>
     public EmployeeEntity Convert(Employee domain)
     {
@@ -48,7 +48,7 @@ IConverter<Employee, EmployeeEntity>, IRestorer<Employee, EmployeeEntity>
 //            new Department(target.Department.DeptId,target.Department.DeptName)
         );
         //DepartmentEntityからDepartmentに変換
-        DepartmentEntity deptEntity = target.Department;
+        DepartmentEntity deptEntity = target.Department!;
         int deptId = deptEntity.DeptId;
         string deptName = deptEntity.DeptName;
         Department department = new Department(deptId,deptName);
