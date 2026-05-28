@@ -122,7 +122,7 @@ public class EmployeeRegisterController : Controller
             return RedirectToAction("Enter");
         }
         // EmployeeRegisterFormをドメインモデル:Employeeに変換する
-        var employee = _adapter.Restore(viewModel!);
+        var employee = _adapter.Restore(viewModel);
         // 新しい従業員を登録する
         _employeeRegisterService.Register(employee);
         return View(viewModel);
